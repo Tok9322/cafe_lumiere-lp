@@ -14,6 +14,11 @@ links.forEach(a=>{
   a.addEventListener('click', (e)=>{
     const id = a.getAttribute('href');
     if (!id || id === '#') return;
+    if (id === '#top'){
+      e.preventDefault();
+      window.scrollTo({top:0, behavior:'smooth'});
+      return;
+    }
     const el = document.querySelector(id);
     if (el){
       e.preventDefault();
